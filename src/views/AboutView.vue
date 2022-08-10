@@ -19,23 +19,33 @@
             </el-tree>
           </div>
         </el-col>
-        <el-col :span="18" class="border2" style="display: flex;">
-          <div class="heigth position" style="width: 70%;">
-            <el-row>
+        <el-col :span="18" class="border2">
+          <div style="width:100%;">
+            <el-row >
               <el-col :span="24">
-                <i class="fa-3x fa-regular fa-folder" style="color: rgb(90, 90, 90);"></i>
-              </el-col>
-              <el-col :span="24">
-                <span>{{data.label}}</span>
+                  <span style="color: rgb(90, 90, 90);">Files</span>
+                  <hr>
               </el-col>
             </el-row>
           </div>
-          <div class="heigth position" style="width: 30%;">
-            <el-row>
-              <el-col>
-                <i class="fa-lg fa-regular fa-trash-can show" v-show="data.data" @click="() => remove(nodo, data)"></i>
-              </el-col>
-            </el-row>
+          <div style="display: flex; height: 443px;">
+            <div class="position" style="width: 70%;">
+              <el-row>
+                <el-col :span="24">
+                  <i class="fa-3x fa-regular fa-folder" style="color: rgb(90, 90, 90);"></i>
+                </el-col>
+                <el-col :span="24">
+                  <span>{{data.label}}</span>
+                </el-col>
+              </el-row>
+            </div>
+            <div class="position" style="width: 30%;" >
+              <el-row>
+                <el-col>
+                  <i class="fa-lg fa-regular fa-trash-can show" v-show="data.data" @click="() => remove(nodo, data)"></i>
+                </el-col>
+              </el-row>
+            </div>
           </div>
         </el-col>
       </el-row>
@@ -53,7 +63,7 @@
 import Nav from '@/components/Nav.vue'
 import Products from '@/views/finderScripts/products'
 import { mapActions, mapMutations, mapState } from 'vuex';
-let id = 1000;
+
 export default {
   components: {
     Nav,

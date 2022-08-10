@@ -70,6 +70,8 @@
 </template>
 <script>
 import { mapMutations, mapState } from "vuex";
+
+let id = 1000;
 export default {
   data() {
     return {
@@ -85,7 +87,7 @@ export default {
   methods: {
     append(data, name) {
       //this.$set(data.data, 'children', []);
-      const newChild = { id: 25, label: name, children: [] };
+      const newChild = { id: id++, label: name, children: [] };
       if (!this.data.data.children) {
         this.$set(this.data.data, "children", []);
       }
