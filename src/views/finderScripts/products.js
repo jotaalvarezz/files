@@ -22,15 +22,18 @@ const products = [{
                 },
                 {
                     id: 'pear',
-                    label: 'Pera'
+                    label: 'Pera',
+                    file:'.pdf'
                 },
                 {
                     id: 'pineapple',
-                    label: 'Piña'
+                    label: 'Piña',
+                    file:'.pdf'
                 },
                 {
                     id: 'orange',
-                    label: 'Naranja'
+                    label: 'Naranja',
+                    file:'.pdf'
                 }
             ]
         },
@@ -39,19 +42,24 @@ const products = [{
             label: 'Vegetales',
             children: [{
                     id: 'onion',
-                    label: 'Cebolla'
+                    label: 'Cebolla',
+                    file:'.pdf'
+                    
                 },
                 {
                     id: 'tomatoes',
-                    label: 'Tomate'
+                    label: 'Tomate',
+                    file:'.pdf'
                 },
                 {
                     id: 'lettuce',
-                    label: 'Lechuga'
+                    label: 'Lechuga',
+                    file:'.pdf'
                 },
                 {
                     id: 'spinach',
-                    label: 'Espinaca'
+                    label: 'Espinaca',
+                    file:'.pdf'
                 }
             ]
         }
