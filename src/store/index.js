@@ -10,10 +10,10 @@ export default new Vuex.Store({
     },
     getters: {},
     mutations: {
-        getNodo(nodo, data) {
-            this.state.nodo = nodo
-            this.state.data = data
-            console.log('cucho => ', nodo)
+        getNode(state, nodo) {
+            state.nodo = nodo[0]
+            state.data = nodo[1]
+            console.log('Node => ', nodo)
         },
 
         /* append(data) {

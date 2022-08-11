@@ -11,7 +11,7 @@
           <div class="block heigth">
             <el-tree :data="info" node-key="id" :default-expand-all="expand" :expand-on-click-node="true" draggable>
               <span class="custom-tree-node" slot-scope="{ node, data }">
-                <span @click="() => getNodo(node, data)">
+                <span @click="getNode([node,data])">
                   <i class="fa-lg fa-regular fa-folder"></i>
                   <span>{{ node.label }}</span>
                 </span>
@@ -42,7 +42,7 @@
             <div class="position" style="width: 30%;" >
               <el-row>
                 <el-col>
-                  <i class="fa-lg fa-regular fa-trash-can show" v-show="data.data" @click="() => remove(nodo, data)"></i>
+                  <i class="fa-lg fa-regular fa-trash-can show" v-show="data.label" @click="() => remove(nodo, data)"></i>
                 </el-col>
               </el-row>
             </div>
@@ -80,23 +80,10 @@ export default {
   },
 
   methods: {
-    ...mapMutations(['getNodo']),
-    /* getNodo(nodo, data) {
-      this.nodo = nodo
-      console.log(nodo.label)
-    }, */
-
-    /* append(nodo, data) {
-      const newChild = { id: id++, label: 'testtest', children: [] };
-      if (!data.children) {
-        this.$set(data, 'children', []);
-      }
-      data.children.push(newChild);
-      console.log(" = > ",data)
-    }, */
+    ...mapMutations(['getNode']),
 
     remove(node, data) {
-      const parent = data.parent;
+      const parent = node.parent;
       const children = parent.data.children || parent.data;
       const index = children.findIndex(d => d.id === data.id);
       children.splice(index, 1);

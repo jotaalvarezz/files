@@ -49,7 +49,7 @@
               >
             </span>
           </el-dialog>
-          <el-menu-item index="3" v-show="data.data">
+          <el-menu-item index="3" v-show="data.label">
             <el-upload
               class="upload-demo"
               action="https://jsonplaceholder.typicode.com/posts/"
@@ -57,7 +57,7 @@
               <i class="fa-2x fa-solid fa-cloud-arrow-up"></i>
             </el-upload>
           </el-menu-item>
-          <el-menu-item index="4" v-show="data.data">
+          <el-menu-item index="4" v-show="data.label">
             <i
               class="fa-2x fa-solid fa-folder-plus"
               @click="centerDialogVisible = true"
@@ -88,10 +88,10 @@ export default {
     append(data, name) {
       //this.$set(data.data, 'children', []);
       const newChild = { id: id++, label: name, children: [] };
-      if (!this.data.data.children) {
-        this.$set(this.data.data, "children", []);
+      if (!this.data.children) {
+        this.$set(this.data, "children", []);
       }
-      data.data.children.push(newChild);
+      data.children.push(newChild);
       this.name = "";
       this.centerDialogVisible = false;
     },
